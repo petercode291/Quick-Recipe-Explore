@@ -1,0 +1,13 @@
+name = "quick-recipe-explore-ai"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+# Set ALLOWED_ORIGINS in the Cloudflare dashboard or as a non-secret variable.
+# Example value after publishing the site: https://YOUR-USERNAME.github.io
+# Keep GEMINI_API_KEY as a Cloudflare Worker Secret, never put it in this file.
+
+[vars]
+GEMINI_MODEL = "gemini-2.5-flash"
+
+# For stricter per-IP limits, configure a Rate Limiting binding in the Cloudflare dashboard
+# or add a rate-limiting rule for this Worker. The Worker checks CHAT_LIMITER if configured.

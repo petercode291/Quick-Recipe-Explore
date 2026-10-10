@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f7ef" />
+    <meta
+      name="description"
+      content="Find something delicious to cook. Explore recipes, search by ingredient, and ask your AI cooking assistant for ideas."
+    />
+    <title>Quick Recipe Explore — Find your next favorite</title>
+    <link rel="preconnect" href="https://www.themealdb.com" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Quick Recipe Explore home"
+        ><span class="brand-mark">✳</span
+        ><span>quick<span class="brand-light">recipe</span></span></a
+      >
+      <nav>
+        <a href="#explore">Explore</a
+        ><a href="#ingredients">Use my ingredients</a
+        ><a href="#ai-chef">AI chef</a>
+      </nav>
+      <a class="nav-cta" href="#explore">Find a recipe <span>↗</span></a
+      ><button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle navigation"
+      >
+        ☰
+      </button>
+    </header>
+    <main id="home">
+      <section class="hero wrap">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="dot"></span> YOUR NEXT DELICIOUS IDEA
+          </div>
+          <h1>Make something<br /><em>wonderful.</em></h1>
+          <p>
+            Good food doesn't need to be complicated. Find recipes you'll love,
+            use what you have, and let a little inspiration into your kitchen.
+          </p>
+          <form class="search-bar" id="searchForm">
+            <span class="search-icon">⌕</span
+            ><input
+              id="searchInput"
+              aria-label="Search recipes"
+              placeholder="Search dishes, ingredients..."
+              maxlength="80"
+            /><button type="submit">Find recipes <span>→</span></button>
+          </form>
+          <div class="popular">
+            <span>Popular:</span><button data-search="Chicken">Chicken</button
+            ><button data-search="Pasta">Pasta</button
+            ><button data-search="Vegetarian">Vegetarian</button>
+          </div>
+        </div>
+        <div class="hero-art">
+          <img
+            src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1100&q=85"
+            alt="Fresh vegetables and ingredients on a kitchen table"
+          />
+          <div class="floating-note">
+            <span class="note-icon">✦</span>
+            <div>
+              <strong>A little inspiration</strong
+              ><small>One good meal at a time</small>
+            </div>
+          </div>
+          <div class="hero-sticker">
+            GOOD FOOD<br />GOOD MOOD <span>♥</span>
+          </div>
+        </div>
+      </section>
+      <section class="wrap section" id="explore">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">A WORLD OF FLAVOR</div>
+            <h2>What sounds good?</h2>
+            <p class="muted">A few ideas to get your appetite going.</p>
+          </div>
+          <button class="text-link" id="surpriseBtn">
+            Surprise me <span>↗</span>
+          </button>
+        </div>
+        <div class="category-row" id="categoryRow">
+          <button class="category active" data-category="all">
+            <span>✳</span> All recipes</button
+          ><button class="category" data-category="Chicken">
+            <span>🍗</span> Chicken</button
+          ><button class="category" data-category="Seafood">
+            <span>🐟</span> Seafood</button
+          ><button class="category" data-category="Vegetarian">
+            <span>🥬</span> Vegetarian</button
+          ><button class="category" data-category="Pasta">
+            <span>🍝</span> Pasta</button
+          ><button class="category" data-category="Dessert">
+            <span>🍰</span> Dessert
+          </button>
+        </div>
+        <div class="recipe-grid" id="recipeGrid">
+          <div class="loading-card">Finding something delicious…</div>
+        </div>
+        <p class="status-line" id="recipeStatus" aria-live="polite"></p>
+      </section>
+      <section class="ingredient-section" id="ingredients">
+        <div class="wrap ingredient-layout">
+          <div>
+            <div class="eyebrow">THE FRIDGE CHALLENGE</div>
+            <h2>What's in your<br /><em>kitchen today?</em></h2>
+            <p>
+              Tell us what you've got. We'll find recipes that make the most of
+              your ingredients.
+            </p>
+            <div class="ingredient-form" id="ingredientForm">
+              <input
+                id="ingredientInput"
+                placeholder="Add an ingredient (e.g. eggs)"
+                maxlength="40"
+                aria-label="Ingredient"
+              /><button id="addIngredient">Add +</button>
+            </div>
+            <div class="ingredient-chips" id="ingredientChips">
+              <span class="hint">Try: eggs, rice, tomato, potato</span>
+            </div>
+            <button class="dark-button" id="matchBtn">
+              Find my recipes <span>→</span>
+            </button>
+            <p class="tiny muted">
+              Smart matching runs in your browser. No account needed.
+            </p>
+          </div>
+          <div class="ingredient-art">
+            <img
+              src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=900&q=85"
+              alt="Fresh salad ingredients"
+            />
+            <div class="match-card">
+              <span>✦</span>
+              <div>
+                <strong>Your ingredients, reimagined</strong
+                ><small>Simple ideas, less food waste.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="wrap ai-section" id="ai-chef">
+        <div class="ai-intro">
+          <div class="eyebrow">MEET YOUR KITCHEN SIDEKICK</div>
+          <h2>A chef in your<br /><em>back pocket.</em></h2>
+          <p>
+            Not sure what to make? Chat with your AI cooking assistant for meal
+            ideas, ingredient swaps, and help making dinner happen.
+          </p>
+          <div class="ai-benefit">
+            <span>✦</span> Personalized cooking ideas
+          </div>
+          <div class="ai-benefit"><span>✦</span> Ingredient swaps and tips</div>
+          <div class="ai-benefit"><span>✦</span> No sign-up required</div>
+        </div>
+        <div class="chat-card">
+          <div class="chat-header">
+            <div class="chef-avatar">✳</div>
+            <div>
+              <strong>Your AI sous-chef</strong
+              ><small><span class="online-dot"></span> Ready to help</small>
+            </div>
+            <span class="sparkle">✦</span>
+          </div>
+          <div class="chat-messages" id="chatMessages">
+            <div class="message assistant">
+              <span class="message-avatar">✳</span>
+              <div>
+                Hey there, home chef! 👋 Tell me what ingredients you have or
+                what you're in the mood for, and let's make something delicious.
+              </div>
+            </div>
+          </div>
+          <div class="prompt-suggestions">
+            <button
+              data-prompt="I have eggs, rice, and tomatoes. What can I cook?"
+            >
+              🍅 Use my ingredients</button
+            ><button
+              data-prompt="Suggest a quick vegetarian dinner for tonight."
+            >
+              🥬 Quick vegetarian dinner</button
+            ><button data-prompt="Give me a simple recipe for a beginner cook.">
+              👩‍🍳 Beginner-friendly
+            </button>
+          </div>
+          <form id="chatForm" class="chat-input">
+            <input
+              id="chatInput"
+              placeholder="Ask your sous-chef anything…"
+              maxlength="1200"
+              aria-label="Message your AI sous-chef"
+            /><button type="submit" aria-label="Send message">↑</button>
+          </form>
+          <p class="tiny chat-note" id="aiStatus">
+            AI answers are generated by an external service and may need
+            checking.
+          </p>
+        </div>
+      </section>
+      <section class="wrap newsletter">
+        <div>
+          <div class="eyebrow">A LITTLE FOOD FOR THOUGHT</div>
+          <h2>Keep your curiosity <em>cooking.</em></h2>
+          <p>Explore something new, one recipe at a time.</p>
+        </div>
+        <a class="dark-button" href="#explore"
+          >Explore recipes <span>→</span></a
+        >
+      </section>
+    </main>
+    <footer class="footer">
+      <a class="brand" href="#home"
+        ><span class="brand-mark">✳</span
+        ><span>quick<span class="brand-light">recipe</span></span></a
+      >
+      <p>Made for curious cooks and hungry minds.</p>
+      <div>
+        <a
+          href="https://www.themealdb.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Recipe data by TheMealDB</a
+        ><span> · </span><a href="#ai-chef">AI sous-chef</a>
+      </div>
+      <small
+        >© <span id="year"></span> Quick Recipe Explore. Cook something
+        lovely.</small
+      >
+    </footer>
+    <dialog id="recipeDialog" class="recipe-dialog">
+      <button class="dialog-close" id="closeDialog" aria-label="Close recipe">
+        ×
+      </button>
+      <div id="recipeDetail"></div>
+    </dialog>
+    <script src="js/recipes.js"></script>
+    <script src="js/smart-search.js"></script>
+    <script src="js/ai-chef.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
